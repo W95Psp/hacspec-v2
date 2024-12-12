@@ -39,22 +39,25 @@ Require Import String.
 Require Import Coq.Floats.Floats.
 From RecordUpdate Require Import RecordSet.
 Import RecordSetNotations.
+From Core Require Import Core.
 
 
 
 Definition discriminant_EnumWithRepr_ExplicitDiscr1 : t_u16 :=
-  1.
+  (1 : t_u16).
 
 Definition discriminant_EnumWithRepr_ExplicitDiscr2 : t_u16 :=
-  5.
+  (5 : t_u16).
 
 Inductive t_EnumWithRepr : Type :=
 | EnumWithRepr_ExplicitDiscr1
 | EnumWithRepr_ExplicitDiscr2
 | EnumWithRepr_ImplicitDiscrEmptyTuple
 | EnumWithRepr_ImplicitDiscrEmptyStruct.
-Arguments t_EnumWithRepr:clear implicits.
-Arguments t_EnumWithRepr.
+Arguments EnumWithRepr_ExplicitDiscr1.
+Arguments EnumWithRepr_ExplicitDiscr2.
+Arguments EnumWithRepr_ImplicitDiscrEmptyTuple.
+Arguments EnumWithRepr_ImplicitDiscrEmptyStruct.
 
 Definition t_EnumWithRepr_cast_to_repr (x : t_EnumWithRepr) : t_u16 :=
   match x with
@@ -63,19 +66,19 @@ Definition t_EnumWithRepr_cast_to_repr (x : t_EnumWithRepr) : t_u16 :=
   | EnumWithRepr_ExplicitDiscr2 =>
     discriminant_EnumWithRepr_ExplicitDiscr2
   | EnumWithRepr_ImplicitDiscrEmptyTuple =>
-    t_Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr2) (1)
+    Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr2) ((1 : t_u16))
   | EnumWithRepr_ImplicitDiscrEmptyStruct =>
-    t_Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr2) (2)
+    Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr2) ((2 : t_u16))
   end.
 
 (* NotImplementedYet *)
 
-Definition f (_ : unit) : t_u32 :=
-  let v__x := cast (t_Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr2) (0)) in
-  t_Add_f_add (cast (t_EnumWithRepr_cast_to_repr (EnumWithRepr_ImplicitDiscrEmptyTuple))) (cast (t_EnumWithRepr_cast_to_repr (EnumWithRepr_ImplicitDiscrEmptyStruct))).
+Definition f '(_ : unit) : t_u32 :=
+  let v__x := cast (Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr2) ((0 : t_u16))) in
+  Add_f_add (cast (t_EnumWithRepr_cast_to_repr (EnumWithRepr_ImplicitDiscrEmptyTuple))) (cast (t_EnumWithRepr_cast_to_repr (EnumWithRepr_ImplicitDiscrEmptyStruct))).
 
 Definition ff__CONST : t_u16 :=
-  cast (t_Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr1) (0)).
+  cast (Add_f_add (discriminant_EnumWithRepr_ExplicitDiscr1) ((0 : t_u16))).
 
 Definition get_casted_repr (x : t_EnumWithRepr) : t_u64 :=
   cast (t_EnumWithRepr_cast_to_repr (x)).
@@ -83,3 +86,9 @@ Definition get_casted_repr (x : t_EnumWithRepr) : t_u64 :=
 Definition get_repr (x : t_EnumWithRepr) : t_u16 :=
   t_EnumWithRepr_cast_to_repr (x).
 '''
+_CoqProject = '''
+-R ./ TODO
+-arg -w
+-arg all
+
+Enum_repr.v'''

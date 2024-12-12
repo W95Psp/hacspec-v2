@@ -39,6 +39,7 @@ Require Import String.
 Require Import Coq.Floats.Floats.
 From RecordUpdate Require Import RecordSet.
 Import RecordSetNotations.
+From Core Require Import Core.
 
 
 
@@ -47,47 +48,46 @@ Export Hax_lib (t_int).
 
 Record t_Foo : Type :=
   {
-    f_field : t_u8;
+    Foo_f_field : t_u8;
   }.
-Arguments t_Foo:clear implicits.
-Arguments t_Foo.
 Arguments Build_t_Foo.
+Arguments Foo_f_field.
 #[export] Instance settable_t_Foo : Settable _ :=
-  settable! (@Build_t_Foo) <f_field>.
+  settable! (Build_t_Foo) <Foo_f_field>.
 
 (* NotImplementedYet *)
 
 Definition v_CONSTANT : t_Foo :=
-  Build_t_Foo (3).
+  Build_t_Foo ((3 : t_u8)).
 
 Definition casts (x8 : t_u8) (x16 : t_u16) (x32 : t_u32) (x64 : t_u64) (xs : t_usize) : unit :=
-  let _ : t_u64 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (x64)) (cast (xs)) in
-  let _ : t_u32 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (cast (x8)) (cast (x16))) (x32)) (cast (x64))) (cast (xs)) in
-  let _ : t_u16 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (cast (x8)) (x16)) (cast (x32))) (cast (x64))) (cast (xs)) in
-  let _ : t_u8 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (x8) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
-  let _ : t_i64 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
-  let _ : t_i32 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
-  let _ : t_i16 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
-  let _ : t_i8 := t_Add_f_add (t_Add_f_add (t_Add_f_add (t_Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
+  let _ : t_u64 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (x64)) (cast (xs)) in
+  let _ : t_u32 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (cast (x8)) (cast (x16))) (x32)) (cast (x64))) (cast (xs)) in
+  let _ : t_u16 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (cast (x8)) (x16)) (cast (x32))) (cast (x64))) (cast (xs)) in
+  let _ : t_u8 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (x8) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
+  let _ : t_i64 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
+  let _ : t_i32 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
+  let _ : t_i16 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
+  let _ : t_i8 := Add_f_add (Add_f_add (Add_f_add (Add_f_add (cast (x8)) (cast (x16))) (cast (x32))) (cast (x64))) (cast (xs)) in
   tt.
 
-Definition fn_pointer_cast (_ : unit) : unit :=
+Definition fn_pointer_cast '(_ : unit) : unit :=
   let f : t_u32 -> t_u32 := fun x =>
     x in
   tt.
 
-Definition math_integers (x : t_Int) `{andb (f_gt (x) (impl__Int___unsafe_from_str ("0"%string))) (f_lt (x) (impl__Int___unsafe_from_str ("16"%string))) = true} : t_u8 :=
-  let _ : t_Int := f_lift (3) in
-  let _ := f_gt (impl__Int___unsafe_from_str ("-340282366920938463463374607431768211455000"%string)) (impl__Int___unsafe_from_str ("340282366920938463463374607431768211455000"%string)) in
-  let _ := f_lt (x) (x) in
-  let _ := f_ge (x) (x) in
-  let _ := f_le (x) (x) in
-  let _ := f_ne (x) (x) in
-  let _ := f_eq (x) (x) in
-  let _ := f_add (x) (x) in
-  let _ := f_sub (x) (x) in
-  let _ := f_mul (x) (x) in
-  let _ := f_div (x) (x) in
+Definition math_integers (x : t_Int) `{andb (PartialOrd_f_gt (x) (impl__Int___unsafe_from_str (("0"%string : string)))) (PartialOrd_f_lt (x) (impl__Int___unsafe_from_str (("16"%string : string)))) = true} : t_u8 :=
+  let _ : t_Int := Abstraction_f_lift ((3 : t_usize)) in
+  let _ := PartialOrd_f_gt (impl__Int___unsafe_from_str (("-340282366920938463463374607431768211455000"%string : string))) (impl__Int___unsafe_from_str (("340282366920938463463374607431768211455000"%string : string))) in
+  let _ := PartialOrd_f_lt (x) (x) in
+  let _ := PartialOrd_f_ge (x) (x) in
+  let _ := PartialOrd_f_le (x) (x) in
+  let _ := PartialEq_f_ne (x) (x) in
+  let _ := PartialEq_f_eq (x) (x) in
+  let _ := Add_f_add (x) (x) in
+  let _ := Sub_f_sub (x) (x) in
+  let _ := Mul_f_mul (x) (x) in
+  let _ := Div_f_div (x) (x) in
   let _ : t_i16 := impl__Int__to_i16 (x) in
   let _ : t_i32 := impl__Int__to_i32 (x) in
   let _ : t_i64 := impl__Int__to_i64 (x) in
@@ -98,44 +98,50 @@ Definition math_integers (x : t_Int) `{andb (f_gt (x) (impl__Int___unsafe_from_s
   let _ : t_u64 := impl__Int__to_u64 (x) in
   let _ : t_u128 := impl__Int__to_u128 (x) in
   let _ : t_usize := impl__Int__to_usize (x) in
-  impl__Int__to_u8 (f_add (x) (f_mul (x) (x))).
+  impl__Int__to_u8 (Add_f_add (x) (Mul_f_mul (x) (x))).
 
 Definition null : ascii :=
-  "\000"%char.
+  ("\000"%char : ascii).
 
-Definition numeric (_ : unit) : unit :=
-  let _ : t_usize := 123 in
-  let _ : t_isize := -42 in
-  let _ : t_isize := 42 in
-  let _ : t_i32 := -42 in
-  let _ : t_u128 := 22222222222222222222 in
+Definition numeric '(_ : unit) : unit :=
+  let _ : t_usize := (123 : t_usize) in
+  let _ : t_isize := (-42 : t_isize) in
+  let _ : t_isize := (42 : t_isize) in
+  let _ : t_i32 := (-42 : t_i32) in
+  let _ : t_u128 := (22222222222222222222 : t_u128) in
   tt.
 
-Definition patterns (_ : unit) : unit :=
-  let _ := match 1 with
+Definition patterns '(_ : unit) : unit :=
+  let _ := match (1 : t_u8) with
   | 2 =>
     tt
   | _ =>
     tt
   end in
-  let _ := match ("hello"%string,(123,["a"%string; "b"%string])) with
+  let _ := match (("hello"%string : string),((123 : t_i32),[("a"%string : string); ("b"%string : string)])) with
   | ("hello"%string,(123,v__todo)) =>
     tt
   | _ =>
     tt
   end in
-  let _ := match Build_t_Foo (4) with
-  | Foo (3) =>
+  let _ := match Build_t_Foo ((4 : t_u8)) with
+  | Build_t_Foo (3) =>
     tt
   | _ =>
     tt
   end in
   tt.
 
-Definition panic_with_msg (_ : unit) : unit :=
-  never_to_any (panic_fmt (impl_2__new_const (["with msg"%string]))).
+Definition panic_with_msg '(_ : unit) : unit :=
+  never_to_any (panic_fmt (impl_2__new_const ([("with msg"%string : string)]))).
 
-Definition empty_array (_ : unit) : unit :=
+Definition empty_array '(_ : unit) : unit :=
   let _ : t_Slice t_u8 := unsize ([]) in
   tt.
 '''
+_CoqProject = '''
+-R ./ TODO
+-arg -w
+-arg all
+
+Literals.v'''

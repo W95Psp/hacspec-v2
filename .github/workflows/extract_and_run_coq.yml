@@ -1,0 +1,50 @@
+name: Extract and Run - Coq
+
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: ⤵ Install hax
+        run: |
+          nix build .\#coq-coverage-example
+
+      # - name: build coverage example
+      #   working-directory: hax/examples/coverage
+      #   run: |
+      #     nix run . into coq
+
+      # - name: install annotated core for coq
+      #   working-directory: hax/proof-libs/coq/coq/generated-core
+      #   run: |
+      #     nix-shell --packages coq coqPackages.coq-record-update --run "coq_makefile -f _CoqProject -o Makefile" && \
+      #     nix-shell --packages coq coqPackages.coq-record-update --run "make" && \
+      #     nix-shell --packages coq coqPackages.coq-record-update --run "sudo make install"
+
+      # - name: run coq - coverage
+      #   working-directory: hax/examples/coverage/proofs/coq/extraction
+      #   run: |
+      #     sed 's/_impl_f_/_f_/' < Coverage_Test_instance.v > Coverage_Test_instance.v # TODO: this is a hotfix, should be solved in backend and removed from here.
+      #     nix-shell --packages coq coqPackages.coq-record-update --run "coq_makefile -f _CoqProject -o Makefile"
+      #     nix-shell --packages coq coqPackages.coq-record-update --run "make"
+
+      # - name: build and run coq on tests
+      #   env:
+      #     FILES: assert attribute-opaque enum-struct-variant
+      #     NOT_SUPPORTED_FILES: attributes cli conditional-match constructor-as-closure cyclic-modules enum-repr even dyn functions
+      #   run: |
+      #     for f in $FILES; do \
+      #       cd hax/tests/$f && \
+      #       nix run . into coq && \
+      #       cd ../../..
+      #     done
+      #     for f in $FILES; do \
+      #       cd hax/tests/$f/proofs/coq/extraction && \
+      #       nix-shell --packages coq coqPackages.coq-record-update --run "coq_makefile -f _CoqProject -o Makefile" && \
+      #       nix-shell --packages coq coqPackages.coq-record-update --run "make" && \
+      #       cd ../../../../../../
+      #     done

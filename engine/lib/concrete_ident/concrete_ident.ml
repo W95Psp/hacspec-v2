@@ -473,7 +473,8 @@ module MakeViewAPI (NP : NAME_POLICY) : VIEW_API = struct
         else escape name
     | Constructor { is_struct } ->
         let name =
-          if start_lowercase name || is_reserved_word name then "C_" ^ name
+          if start_lowercase name || is_reserved_word name then
+            NP.constructor_prefix ^ name
           else escape name
         in
         if is_struct then NP.struct_constructor_name_transform name
@@ -565,6 +566,7 @@ module DefaultNamePolicy = struct
   let field_name_transform ~struct_name:_ = Fn.id
   let enum_constructor_name_transform ~enum_name:_ = Fn.id
   let struct_constructor_name_transform = Fn.id
+  let constructor_prefix = "C_"
 end
 
 let matches_namespace (ns : Types.namespace) (did : t) : bool =

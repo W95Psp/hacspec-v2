@@ -39,20 +39,27 @@ Require Import String.
 Require Import Coq.Floats.Floats.
 From RecordUpdate Require Import RecordSet.
 Import RecordSetNotations.
+From Core Require Import Core.
 
 
 
 (* NotImplementedYet *)
 
 Definition v_VERSION : t_Slice t_u8 :=
-  unsize ([118; 49]).
+  unsize ([(118 : t_u8); (49 : t_u8)]).
 
-Definition do_something (_ : t_Slice t_u8) : unit :=
+Definition do_something '(_ : t_Slice t_u8) : unit :=
   tt.
 
-Definition r#unsized (_ : t_Array (t_Slice t_u8) (1)) : unit :=
+Definition r#unsized '(_ : t_Array (t_Slice t_u8) ((1 : t_usize))) : unit :=
   tt.
 
-Definition sized (x : t_Array (t_Array (t_u8) (4)) (1)) : unit :=
-  r#unsized ([unsize (index (x) (0))]).
+Definition sized (x : t_Array (t_Array (t_u8) ((4 : t_usize))) ((1 : t_usize))) : unit :=
+  r#unsized ([unsize (Index_f_index (x) ((0 : t_usize)))]).
 '''
+_CoqProject = '''
+-R ./ TODO
+-arg -w
+-arg all
+
+Slices.v'''

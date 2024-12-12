@@ -152,6 +152,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "coverage"
+version = "0.1.0"
+
+[[package]]
 name = "cpufeatures"
 version = "0.2.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -385,7 +389,6 @@ name = "kyber_compress"
 version = "0.1.0"
 dependencies = [
  "hax-lib",
- "hax-lib-macros",
 ]
 
 [[package]]
@@ -733,7 +736,7 @@ dependencies = [
 name = "sha256"
 version = "0.1.0"
 dependencies = [
- "hax-lib-macros",
+ "hax-lib",
 ]
 
 [[package]]

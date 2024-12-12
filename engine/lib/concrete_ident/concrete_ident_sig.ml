@@ -18,6 +18,7 @@ struct
     val field_name_transform : struct_name:string -> string -> string
     val enum_constructor_name_transform : enum_name:string -> string -> string
     val struct_constructor_name_transform : string -> string
+    val constructor_prefix : string
   end
 
   module type VIEW_API = sig

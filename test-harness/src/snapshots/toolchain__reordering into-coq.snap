@@ -38,44 +38,51 @@ Require Import String.
 Require Import Coq.Floats.Floats.
 From RecordUpdate Require Import RecordSet.
 Import RecordSetNotations.
+From Core Require Import Core.
 
 
 
 Inductive t_Foo : Type :=
 | Foo_A
 | Foo_B.
-Arguments t_Foo:clear implicits.
-Arguments t_Foo.
+Arguments Foo_A.
+Arguments Foo_B.
 
 Record t_Bar : Type :=
   {
-    0 : t_Foo;
+    Bar_0 : t_Foo;
   }.
-Arguments t_Bar:clear implicits.
-Arguments t_Bar.
 Arguments Build_t_Bar.
+Arguments Bar_0.
 #[export] Instance settable_t_Bar : Settable _ :=
-  settable! (@Build_t_Bar) <0>.
+  settable! (Build_t_Bar) <Bar_0>.
+Notation "'Bar'" := Build_t_Bar.
 
 Definition t_Foo_cast_to_repr (x : t_Foo) : t_isize :=
   match x with
   | Foo_A =>
-    0
+    (0 : t_isize)
   | Foo_B =>
-    1
+    (1 : t_isize)
   end.
 
 (* NotImplementedYet *)
 
-Definition f (_ : t_u32) : t_Foo :=
+Definition f '(_ : t_u32) : t_Foo :=
   Foo_A.
 
-Definition g (_ : unit) : t_Bar :=
-  Build_t_Bar (f (32)).
+Definition g '(_ : unit) : t_Bar :=
+  Build_t_Bar (f ((32 : t_u32))).
 
-Definition no_dependency_1_ (_ : unit) : unit :=
+Definition no_dependency_1_ '(_ : unit) : unit :=
   tt.
 
-Definition no_dependency_2_ (_ : unit) : unit :=
+Definition no_dependency_2_ '(_ : unit) : unit :=
   tt.
 '''
+_CoqProject = '''
+-R ./ TODO
+-arg -w
+-arg all
+
+Reordering.v'''

@@ -91,6 +91,12 @@
           check-examples = checks.examples;
           check-readme-coherency = checks.readme-coherency;
 
+          coq-coverage-example = pkgs.callPackage ./examples/coverage {
+            inherit (packages) hax;
+            inherit (pkgs) coqPackages;
+            inherit craneLib;
+          };
+
           rust-by-example-hax-extraction = pkgs.stdenv.mkDerivation {
             name = "rust-by-example-hax-extraction";
             phases = ["installPhase"];

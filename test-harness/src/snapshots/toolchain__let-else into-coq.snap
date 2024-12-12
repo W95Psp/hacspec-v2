@@ -38,6 +38,7 @@ Require Import String.
 Require Import Coq.Floats.Floats.
 From RecordUpdate Require Import RecordSet.
 Import RecordSetNotations.
+From Core Require Import Core.
 
 
 
@@ -46,17 +47,23 @@ Import RecordSetNotations.
 Definition let_else (opt : t_Option ((t_u32))) : bool :=
   run (match opt with
   | Option_Some (x) =>
-    ControlFlow_Continue (true)
+    ControlFlow_Continue ((true : bool))
   | _ =>
-    ControlFlow_Break (false)
+    ControlFlow_Break ((false : bool))
   end).
 
 Definition let_else_different_type (opt : t_Option ((t_u32))) : bool :=
   run (let hoist1 := match opt with
   | Option_Some (x) =>
-    ControlFlow_Continue (Option_Some (t_Add_f_add (x) (1)))
+    ControlFlow_Continue (Option_Some (Add_f_add (x) ((1 : t_u32))))
   | _ =>
-    ControlFlow_Break (false)
+    ControlFlow_Break ((false : bool))
   end in
   ControlFlow_Continue (let_else (hoist1))).
 '''
+_CoqProject = '''
+-R ./ TODO
+-arg -w
+-arg all
+
+Let_else.v'''

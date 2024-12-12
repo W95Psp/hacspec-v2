@@ -441,19 +441,19 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (Abstraction_f_lift (x) : t_Z);
   }.
 
-#[globa] Instance t_From_106548803 : t_From ((t_I32)) ((t_I128)) :=
+#[global] Instance t_From_106548803 : t_From ((t_I32)) ((t_I128)) :=
   {
     From_f_from := fun  (x : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (Abstraction_f_lift (x) : t_Z);
   }.
 
-#[globa] Instance t_From_237552649 : t_From ((t_I64)) ((t_I128)) :=
+#[global] Instance t_From_237552649 : t_From ((t_I64)) ((t_I128)) :=
   {
     From_f_from := fun  (x : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (Abstraction_f_lift (x) : t_Z);
   }.
 
-#[globa] Instance t_PartialEq_488790252 : t_PartialEq ((t_I128)) ((t_I128)) :=
+#[global] Instance t_PartialEq_488790252 : t_PartialEq ((t_I128)) ((t_I128)) :=
   {
     PartialEq_f_eq := fun  (self : t_I128) (rhs : t_I128)=>
       PartialEq_f_eq (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -461,7 +461,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_387128921 : t_PartialOrd ((t_I128)) ((t_I128)) :=
+#[global] Instance t_PartialOrd_387128921 : t_PartialOrd ((t_I128)) ((t_I128)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_I128) (rhs : t_I128)=>
       Option_Some (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -497,38 +497,38 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_692501606 : t_Abstraction ((t_I64)) :=
+#[global] Instance t_Abstraction_692501606 : t_Abstraction ((t_I64)) :=
   {
     Abstraction_f_AbstractType := t_Z;
     Abstraction_f_lift := fun  (self : t_I64)=>
       I64_f_v self;
   }.
 
-#[globa] Instance t_From_318313768 : t_From ((t_I8)) ((t_I64)) :=
+#[global] Instance t_From_318313768 : t_From ((t_I8)) ((t_I64)) :=
   {
     From_f_from := fun  (x : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I8) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_215423074 : t_From ((t_I16)) ((t_I64)) :=
+#[global] Instance t_From_215423074 : t_From ((t_I16)) ((t_I64)) :=
   {
     From_f_from := fun  (x : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_221659723 : t_From ((t_I32)) ((t_I64)) :=
+#[global] Instance t_From_221659723 : t_From ((t_I32)) ((t_I64)) :=
   {
     From_f_from := fun  (x : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_927453474 : t_From ((t_I128)) ((t_I64)) :=
+#[global] Instance t_From_927453474 : t_From ((t_I128)) ((t_I64)) :=
   {
     From_f_from := fun  (x : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_PartialEq_474861724 : t_PartialEq ((t_I64)) ((t_I64)) :=
+#[global] Instance t_PartialEq_474861724 : t_PartialEq ((t_I64)) ((t_I64)) :=
   {
     PartialEq_f_eq := fun  (self : t_I64) (rhs : t_I64)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -536,7 +536,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_552634265 : t_PartialOrd ((t_I64)) ((t_I64)) :=
+#[global] Instance t_PartialOrd_552634265 : t_PartialOrd ((t_I64)) ((t_I64)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_I64) (rhs : t_I64)=>
       Option_Some (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -572,38 +572,38 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_493183574 : t_Abstraction ((t_I32)) :=
+#[global] Instance t_Abstraction_493183574 : t_Abstraction ((t_I32)) :=
   {
     Abstraction_f_AbstractType := t_Z;
     Abstraction_f_lift := fun  (self : t_I32)=>
       I32_f_v self;
   }.
 
-#[globa] Instance t_From_573287156 : t_From ((t_I8)) ((t_I32)) :=
+#[global] Instance t_From_573287156 : t_From ((t_I8)) ((t_I32)) :=
   {
     From_f_from := fun  (x : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I8) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_278670998 : t_From ((t_I16)) ((t_I32)) :=
+#[global] Instance t_From_278670998 : t_From ((t_I16)) ((t_I32)) :=
   {
     From_f_from := fun  (x : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_697572388 : t_From ((t_I64)) ((t_I32)) :=
+#[global] Instance t_From_697572388 : t_From ((t_I64)) ((t_I32)) :=
   {
     From_f_from := fun  (x : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_30146175 : t_From ((t_I128)) ((t_I32)) :=
+#[global] Instance t_From_30146175 : t_From ((t_I128)) ((t_I32)) :=
   {
     From_f_from := fun  (x : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_PartialEq_795859780 : t_PartialEq ((t_I32)) ((t_I32)) :=
+#[global] Instance t_PartialEq_795859780 : t_PartialEq ((t_I32)) ((t_I32)) :=
   {
     PartialEq_f_eq := fun  (self : t_I32) (rhs : t_I32)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -611,7 +611,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_126468614 : t_PartialOrd ((t_I32)) ((t_I32)) :=
+#[global] Instance t_PartialOrd_126468614 : t_PartialOrd ((t_I32)) ((t_I32)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_I32) (rhs : t_I32)=>
       Option_Some (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -647,38 +647,38 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_8671741 : t_Abstraction ((t_I16)) :=
+#[global] Instance t_Abstraction_8671741 : t_Abstraction ((t_I16)) :=
   {
     Abstraction_f_AbstractType := t_Z;
     Abstraction_f_lift := fun  (self : t_I16)=>
       I16_f_v self;
   }.
 
-#[globa] Instance t_From_767089390 : t_From ((t_I8)) ((t_I16)) :=
+#[global] Instance t_From_767089390 : t_From ((t_I8)) ((t_I16)) :=
   {
     From_f_from := fun  (x : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I8) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_339600325 : t_From ((t_I32)) ((t_I16)) :=
+#[global] Instance t_From_339600325 : t_From ((t_I32)) ((t_I16)) :=
   {
     From_f_from := fun  (x : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_929749154 : t_From ((t_I64)) ((t_I16)) :=
+#[global] Instance t_From_929749154 : t_From ((t_I64)) ((t_I16)) :=
   {
     From_f_from := fun  (x : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_366897745 : t_From ((t_I128)) ((t_I16)) :=
+#[global] Instance t_From_366897745 : t_From ((t_I128)) ((t_I16)) :=
   {
     From_f_from := fun  (x : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_PartialEq_359538097 : t_PartialEq ((t_I16)) ((t_I16)) :=
+#[global] Instance t_PartialEq_359538097 : t_PartialEq ((t_I16)) ((t_I16)) :=
   {
     PartialEq_f_eq := fun  (self : t_I16) (rhs : t_I16)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -686,7 +686,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_524872806 : t_PartialOrd ((t_I16)) ((t_I16)) :=
+#[global] Instance t_PartialOrd_524872806 : t_PartialOrd ((t_I16)) ((t_I16)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_I16) (rhs : t_I16)=>
       Option_Some (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -722,38 +722,38 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_78490685 : t_Abstraction ((t_I8)) :=
+#[global] Instance t_Abstraction_78490685 : t_Abstraction ((t_I8)) :=
   {
     Abstraction_f_AbstractType := t_Z;
     Abstraction_f_lift := fun  (self : t_I8)=>
       I8_f_v self;
   }.
 
-#[globa] Instance t_From_995744130 : t_From ((t_I16)) ((t_I8)) :=
+#[global] Instance t_From_995744130 : t_From ((t_I16)) ((t_I8)) :=
   {
     From_f_from := fun  (x : t_I8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_513826093 : t_From ((t_I32)) ((t_I8)) :=
+#[global] Instance t_From_513826093 : t_From ((t_I32)) ((t_I8)) :=
   {
     From_f_from := fun  (x : t_I8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_843443999 : t_From ((t_I64)) ((t_I8)) :=
+#[global] Instance t_From_843443999 : t_From ((t_I64)) ((t_I8)) :=
   {
     From_f_from := fun  (x : t_I8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_532428771 : t_From ((t_I128)) ((t_I8)) :=
+#[global] Instance t_From_532428771 : t_From ((t_I128)) ((t_I8)) :=
   {
     From_f_from := fun  (x : t_I8)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_Z t_I128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_PartialEq_594648758 : t_PartialEq ((t_I8)) ((t_I8)) :=
+#[global] Instance t_PartialEq_594648758 : t_PartialEq ((t_I8)) ((t_I8)) :=
   {
     PartialEq_f_eq := fun  (self : t_I8) (rhs : t_I8)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -761,7 +761,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_221919414 : t_PartialOrd ((t_I8)) ((t_I8)) :=
+#[global] Instance t_PartialOrd_221919414 : t_PartialOrd ((t_I8)) ((t_I8)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_I8) (rhs : t_I8)=>
       Option_Some (z_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -797,14 +797,14 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_133243863 : t_Abstraction ((t_U128)) :=
+#[global] Instance t_Abstraction_133243863 : t_Abstraction ((t_U128)) :=
   {
     Abstraction_f_AbstractType := t_HaxInt;
     Abstraction_f_lift := fun  (self : t_U128)=>
       U128_f_v self;
   }.
 
-#[globa] Instance t_PartialEq_792968920 : t_PartialEq ((t_U128)) ((t_U128)) :=
+#[global] Instance t_PartialEq_792968920 : t_PartialEq ((t_U128)) ((t_U128)) :=
   {
     PartialEq_f_eq := fun  (self : t_U128) (rhs : t_U128)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -812,7 +812,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_168269581 : t_PartialOrd ((t_U128)) ((t_U128)) :=
+#[global] Instance t_PartialOrd_168269581 : t_PartialOrd ((t_U128)) ((t_U128)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_U128) (rhs : t_U128)=>
       Option_Some (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -848,14 +848,14 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_219241396 : t_Abstraction ((t_U64)) :=
+#[global] Instance t_Abstraction_219241396 : t_Abstraction ((t_U64)) :=
   {
     Abstraction_f_AbstractType := t_HaxInt;
     Abstraction_f_lift := fun  (self : t_U64)=>
       U64_f_v self;
   }.
 
-#[globa] Instance t_PartialEq_162514109 : t_PartialEq ((t_U64)) ((t_U64)) :=
+#[global] Instance t_PartialEq_162514109 : t_PartialEq ((t_U64)) ((t_U64)) :=
   {
     PartialEq_f_eq := fun  (self : t_U64) (rhs : t_U64)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -863,7 +863,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_210240032 : t_PartialOrd ((t_U64)) ((t_U64)) :=
+#[global] Instance t_PartialOrd_210240032 : t_PartialOrd ((t_U64)) ((t_U64)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_U64) (rhs : t_U64)=>
       Option_Some (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -899,14 +899,14 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_517050128 : t_Abstraction ((t_U32)) :=
+#[global] Instance t_Abstraction_517050128 : t_Abstraction ((t_U32)) :=
   {
     Abstraction_f_AbstractType := t_HaxInt;
     Abstraction_f_lift := fun  (self : t_U32)=>
       U32_f_v self;
   }.
 
-#[globa] Instance t_PartialEq_894496962 : t_PartialEq ((t_U32)) ((t_U32)) :=
+#[global] Instance t_PartialEq_894496962 : t_PartialEq ((t_U32)) ((t_U32)) :=
   {
     PartialEq_f_eq := fun  (self : t_U32) (rhs : t_U32)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -914,7 +914,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_534404445 : t_PartialOrd ((t_U32)) ((t_U32)) :=
+#[global] Instance t_PartialOrd_534404445 : t_PartialOrd ((t_U32)) ((t_U32)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_U32) (rhs : t_U32)=>
       Option_Some (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -950,14 +950,14 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_994821584 : t_Abstraction ((t_U16)) :=
+#[global] Instance t_Abstraction_994821584 : t_Abstraction ((t_U16)) :=
   {
     Abstraction_f_AbstractType := t_HaxInt;
     Abstraction_f_lift := fun  (self : t_U16)=>
       U16_f_v self;
   }.
 
-#[globa] Instance t_PartialEq_603208302 : t_PartialEq ((t_U16)) ((t_U16)) :=
+#[global] Instance t_PartialEq_603208302 : t_PartialEq ((t_U16)) ((t_U16)) :=
   {
     PartialEq_f_eq := fun  (self : t_U16) (rhs : t_U16)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -965,7 +965,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_595325431 : t_PartialOrd ((t_U16)) ((t_U16)) :=
+#[global] Instance t_PartialOrd_595325431 : t_PartialOrd ((t_U16)) ((t_U16)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_U16) (rhs : t_U16)=>
       Option_Some (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -1001,14 +1001,14 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Abstraction_789996186 : t_Abstraction ((t_U8)) :=
+#[global] Instance t_Abstraction_789996186 : t_Abstraction ((t_U8)) :=
   {
     Abstraction_f_AbstractType := t_HaxInt;
     Abstraction_f_lift := fun  (self : t_U8)=>
       U8_f_v self;
   }.
 
-#[globa] Instance t_PartialEq_774173636 : t_PartialEq ((t_U8)) ((t_U8)) :=
+#[global] Instance t_PartialEq_774173636 : t_PartialEq ((t_U8)) ((t_U8)) :=
   {
     PartialEq_f_eq := fun  (self : t_U8) (rhs : t_U8)=>
       PartialEq_f_eq (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
@@ -1016,7 +1016,7 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       PartialEq_f_ne (t_PartialEq := _ : t_PartialEq t_Ordering t_Ordering) (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs)))) (Ordering_Equal);
   }.
 
-#[globa] Instance t_PartialOrd_577399304 : t_PartialOrd ((t_U8)) ((t_U8)) :=
+#[global] Instance t_PartialOrd_577399304 : t_PartialOrd ((t_U8)) ((t_U8)) :=
   {
     PartialOrd_f_partial_cmp := fun  (self : t_U8) (rhs : t_U8)=>
       Option_Some (haxint_cmp (Abstraction_f_lift (Clone_f_clone (self))) (Abstraction_f_lift (Clone_f_clone (rhs))));
@@ -1052,1095 +1052,1095 @@ Definition impl_219__WORDSIZE : t_HaxInt :=
       end;
   }.
 
-#[globa] Instance t_Neg_375517228 : t_Neg ((t_I128)) :=
+#[global] Instance t_Neg_375517228 : t_Neg ((t_I128)) :=
   {
     Neg_f_Output := t_I128;
     Neg_f_neg := fun  (self : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (z_neg (Abstraction_f_lift (self)));
   }.
 
-#[globa] Instance t_BitOr_938342430 : t_BitOr ((t_I128)) ((t_I128)) :=
+#[global] Instance t_BitOr_938342430 : t_BitOr ((t_I128)) ((t_I128)) :=
   {
     BitOr_f_Output := t_I128;
     BitOr_f_bitor := fun  (self : t_I128) (rhs : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (z_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_210530286 : t_Neg ((t_I64)) :=
+#[global] Instance t_Neg_210530286 : t_Neg ((t_I64)) :=
   {
     Neg_f_Output := t_I64;
     Neg_f_neg := fun  (self : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (z_neg (Abstraction_f_lift (self)));
   }.
 
-#[globa] Instance t_BitOr_329754853 : t_BitOr ((t_I64)) ((t_I64)) :=
+#[global] Instance t_BitOr_329754853 : t_BitOr ((t_I64)) ((t_I64)) :=
   {
     BitOr_f_Output := t_I64;
     BitOr_f_bitor := fun  (self : t_I64) (rhs : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (z_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_104016941 : t_Neg ((t_I32)) :=
+#[global] Instance t_Neg_104016941 : t_Neg ((t_I32)) :=
   {
     Neg_f_Output := t_I32;
     Neg_f_neg := fun  (self : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (z_neg (Abstraction_f_lift (self)));
   }.
 
-#[globa] Instance t_BitOr_840483685 : t_BitOr ((t_I32)) ((t_I32)) :=
+#[global] Instance t_BitOr_840483685 : t_BitOr ((t_I32)) ((t_I32)) :=
   {
     BitOr_f_Output := t_I32;
     BitOr_f_bitor := fun  (self : t_I32) (rhs : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (z_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_1063990797 : t_Neg ((t_I16)) :=
+#[global] Instance t_Neg_1063990797 : t_Neg ((t_I16)) :=
   {
     Neg_f_Output := t_I16;
     Neg_f_neg := fun  (self : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (z_neg (Abstraction_f_lift (self)));
   }.
 
-#[globa] Instance t_BitOr_450806124 : t_BitOr ((t_I16)) ((t_I16)) :=
+#[global] Instance t_BitOr_450806124 : t_BitOr ((t_I16)) ((t_I16)) :=
   {
     BitOr_f_Output := t_I16;
     BitOr_f_bitor := fun  (self : t_I16) (rhs : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (z_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_979719905 : t_Neg ((t_I8)) :=
+#[global] Instance t_Neg_979719905 : t_Neg ((t_I8)) :=
   {
     Neg_f_Output := t_I8;
     Neg_f_neg := fun  (self : t_I8)=>
       Concretization_f_concretize (z_neg (Abstraction_f_lift (self)));
   }.
 
-#[globa] Instance t_BitOr_828862178 : t_BitOr ((t_I8)) ((t_I8)) :=
+#[global] Instance t_BitOr_828862178 : t_BitOr ((t_I8)) ((t_I8)) :=
   {
     BitOr_f_Output := t_I8;
     BitOr_f_bitor := fun  (self : t_I8) (rhs : t_I8)=>
       Concretization_f_concretize (z_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_749575336 : t_Add ((t_I128)) ((t_I128)) :=
+#[global] Instance t_Add_749575336 : t_Add ((t_I128)) ((t_I128)) :=
   {
     Add_f_Output := t_I128;
     Add_f_add := fun  (self : t_I128) (rhs : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (z_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Sub_800692471 : t_Sub ((t_I128)) ((t_I128)) :=
+#[global] Instance t_Sub_800692471 : t_Sub ((t_I128)) ((t_I128)) :=
   {
     Sub_f_Output := t_I128;
     Sub_f_sub := fun  (self : t_I128) (rhs : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (z_sub (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_87367909 : t_Add ((t_I64)) ((t_I64)) :=
+#[global] Instance t_Add_87367909 : t_Add ((t_I64)) ((t_I64)) :=
   {
     Add_f_Output := t_I64;
     Add_f_add := fun  (self : t_I64) (rhs : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (z_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Sub_741383133 : t_Sub ((t_I64)) ((t_I64)) :=
+#[global] Instance t_Sub_741383133 : t_Sub ((t_I64)) ((t_I64)) :=
   {
     Sub_f_Output := t_I64;
     Sub_f_sub := fun  (self : t_I64) (rhs : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (z_sub (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_574043038 : t_Add ((t_I32)) ((t_I32)) :=
+#[global] Instance t_Add_574043038 : t_Add ((t_I32)) ((t_I32)) :=
   {
     Add_f_Output := t_I32;
     Add_f_add := fun  (self : t_I32) (rhs : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (z_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Sub_699874712 : t_Sub ((t_I32)) ((t_I32)) :=
+#[global] Instance t_Sub_699874712 : t_Sub ((t_I32)) ((t_I32)) :=
   {
     Sub_f_Output := t_I32;
     Sub_f_sub := fun  (self : t_I32) (rhs : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (z_sub (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_413164706 : t_Add ((t_I16)) ((t_I16)) :=
+#[global] Instance t_Add_413164706 : t_Add ((t_I16)) ((t_I16)) :=
   {
     Add_f_Output := t_I16;
     Add_f_add := fun  (self : t_I16) (rhs : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (z_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Sub_544358249 : t_Sub ((t_I16)) ((t_I16)) :=
+#[global] Instance t_Sub_544358249 : t_Sub ((t_I16)) ((t_I16)) :=
   {
     Sub_f_Output := t_I16;
     Sub_f_sub := fun  (self : t_I16) (rhs : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (z_sub (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_335735231 : t_Add ((t_I8)) ((t_I8)) :=
+#[global] Instance t_Add_335735231 : t_Add ((t_I8)) ((t_I8)) :=
   {
     Add_f_Output := t_I8;
     Add_f_add := fun  (self : t_I8) (rhs : t_I8)=>
       Concretization_f_concretize (z_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Sub_257575332 : t_Sub ((t_I8)) ((t_I8)) :=
+#[global] Instance t_Sub_257575332 : t_Sub ((t_I8)) ((t_I8)) :=
   {
     Sub_f_Output := t_I8;
     Sub_f_sub := fun  (self : t_I8) (rhs : t_I8)=>
       Concretization_f_concretize (z_sub (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Concretization_943450188 : t_Concretization ((t_HaxInt)) ((t_U128)) :=
+#[global] Instance t_Concretization_943450188 : t_Concretization ((t_HaxInt)) ((t_U128)) :=
   {
     Concretization_f_concretize := fun  (self : t_HaxInt)=>
       Build_t_U128 (haxint_rem (self) (v_WORDSIZE_128_));
   }.
 
-#[globa] Instance t_From_355161674 : t_From ((t_U128)) ((t_U8)) :=
+#[global] Instance t_From_355161674 : t_From ((t_U128)) ((t_U8)) :=
   {
     From_f_from := fun  (x : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_739905379 : t_From ((t_U128)) ((t_U16)) :=
+#[global] Instance t_From_739905379 : t_From ((t_U128)) ((t_U16)) :=
   {
     From_f_from := fun  (x : t_U16)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_487010006 : t_From ((t_U128)) ((t_U32)) :=
+#[global] Instance t_From_487010006 : t_From ((t_U128)) ((t_U32)) :=
   {
     From_f_from := fun  (x : t_U32)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_665417617 : t_From ((t_U128)) ((t_U64)) :=
+#[global] Instance t_From_665417617 : t_From ((t_U128)) ((t_U64)) :=
   {
     From_f_from := fun  (x : t_U64)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U128) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_Concretization_10977439 : t_Concretization ((t_HaxInt)) ((t_U64)) :=
+#[global] Instance t_Concretization_10977439 : t_Concretization ((t_HaxInt)) ((t_U64)) :=
   {
     Concretization_f_concretize := fun  (self : t_HaxInt)=>
       Build_t_U64 (haxint_rem (self) (v_WORDSIZE_64_));
   }.
 
-#[globa] Instance t_From_746191059 : t_From ((t_U64)) ((t_U8)) :=
+#[global] Instance t_From_746191059 : t_From ((t_U64)) ((t_U8)) :=
   {
     From_f_from := fun  (x : t_U8)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U64) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_598353876 : t_From ((t_U64)) ((t_U16)) :=
+#[global] Instance t_From_598353876 : t_From ((t_U64)) ((t_U16)) :=
   {
     From_f_from := fun  (x : t_U16)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U64) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_293255347 : t_From ((t_U64)) ((t_U32)) :=
+#[global] Instance t_From_293255347 : t_From ((t_U64)) ((t_U32)) :=
   {
     From_f_from := fun  (x : t_U32)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U64) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_478031507 : t_From ((t_U64)) ((t_U128)) :=
+#[global] Instance t_From_478031507 : t_From ((t_U64)) ((t_U128)) :=
   {
     From_f_from := fun  (x : t_U128)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U64) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_Concretization_264065114 : t_Concretization ((t_HaxInt)) ((t_U32)) :=
+#[global] Instance t_Concretization_264065114 : t_Concretization ((t_HaxInt)) ((t_U32)) :=
   {
     Concretization_f_concretize := fun  (self : t_HaxInt)=>
       Build_t_U32 (haxint_rem (self) (v_WORDSIZE_32_));
   }.
 
-#[globa] Instance t_From_675834555 : t_From ((t_U32)) ((t_U8)) :=
+#[global] Instance t_From_675834555 : t_From ((t_U32)) ((t_U8)) :=
   {
     From_f_from := fun  (x : t_U8)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U32) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_410569540 : t_From ((t_U32)) ((t_U16)) :=
+#[global] Instance t_From_410569540 : t_From ((t_U32)) ((t_U16)) :=
   {
     From_f_from := fun  (x : t_U16)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U32) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_616913228 : t_From ((t_U32)) ((t_U64)) :=
+#[global] Instance t_From_616913228 : t_From ((t_U32)) ((t_U64)) :=
   {
     From_f_from := fun  (x : t_U64)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U32) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_376625380 : t_From ((t_U32)) ((t_U128)) :=
+#[global] Instance t_From_376625380 : t_From ((t_U32)) ((t_U128)) :=
   {
     From_f_from := fun  (x : t_U128)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U32) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_Concretization_656994795 : t_Concretization ((t_HaxInt)) ((t_U16)) :=
+#[global] Instance t_Concretization_656994795 : t_Concretization ((t_HaxInt)) ((t_U16)) :=
   {
     Concretization_f_concretize := fun  (self : t_HaxInt)=>
       Build_t_U16 (haxint_rem (self) (v_WORDSIZE_16_));
   }.
 
-#[globa] Instance t_From_352276566 : t_From ((t_U16)) ((t_U8)) :=
+#[global] Instance t_From_352276566 : t_From ((t_U16)) ((t_U8)) :=
   {
     From_f_from := fun  (x : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_699842532 : t_From ((t_U16)) ((t_U32)) :=
+#[global] Instance t_From_699842532 : t_From ((t_U16)) ((t_U32)) :=
   {
     From_f_from := fun  (x : t_U32)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U16) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_326646767 : t_From ((t_U16)) ((t_U64)) :=
+#[global] Instance t_From_326646767 : t_From ((t_U16)) ((t_U64)) :=
   {
     From_f_from := fun  (x : t_U64)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U16) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_604186294 : t_From ((t_U16)) ((t_U128)) :=
+#[global] Instance t_From_604186294 : t_From ((t_U16)) ((t_U128)) :=
   {
     From_f_from := fun  (x : t_U128)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U16) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_Concretization_492312374 : t_Concretization ((t_HaxInt)) ((t_U8)) :=
+#[global] Instance t_Concretization_492312374 : t_Concretization ((t_HaxInt)) ((t_U8)) :=
   {
     Concretization_f_concretize := fun  (self : t_HaxInt)=>
       Build_t_U8 (haxint_rem (self) (v_WORDSIZE_8_));
   }.
 
-#[globa] Instance t_From_374313775 : t_From ((t_U8)) ((t_U16)) :=
+#[global] Instance t_From_374313775 : t_From ((t_U8)) ((t_U16)) :=
   {
     From_f_from := fun  (x : t_U16)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U8) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_42776580 : t_From ((t_U8)) ((t_U32)) :=
+#[global] Instance t_From_42776580 : t_From ((t_U8)) ((t_U32)) :=
   {
     From_f_from := fun  (x : t_U32)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U8) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_480314375 : t_From ((t_U8)) ((t_U64)) :=
+#[global] Instance t_From_480314375 : t_From ((t_U8)) ((t_U64)) :=
   {
     From_f_from := fun  (x : t_U64)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U8) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_From_135782329 : t_From ((t_U8)) ((t_U128)) :=
+#[global] Instance t_From_135782329 : t_From ((t_U8)) ((t_U128)) :=
   {
     From_f_from := fun  (x : t_U128)=>
       Concretization_f_concretize(t_Concretization := _ : t_Concretization t_HaxInt t_U8) (Abstraction_f_lift (x));
   }.
 
-#[globa] Instance t_Mul_180009375 : t_Mul ((t_I128)) ((t_I128)) :=
+#[global] Instance t_Mul_180009375 : t_Mul ((t_I128)) ((t_I128)) :=
   {
     Mul_f_Output := t_I128;
     Mul_f_mul := fun  (self : t_I128) (rhs : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (z_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Mul_1051209688 : t_Mul ((t_I64)) ((t_I64)) :=
+#[global] Instance t_Mul_1051209688 : t_Mul ((t_I64)) ((t_I64)) :=
   {
     Mul_f_Output := t_I64;
     Mul_f_mul := fun  (self : t_I64) (rhs : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (z_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Mul_481497752 : t_Mul ((t_I32)) ((t_I32)) :=
+#[global] Instance t_Mul_481497752 : t_Mul ((t_I32)) ((t_I32)) :=
   {
     Mul_f_Output := t_I32;
     Mul_f_mul := fun  (self : t_I32) (rhs : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (z_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Mul_768005208 : t_Mul ((t_I16)) ((t_I16)) :=
+#[global] Instance t_Mul_768005208 : t_Mul ((t_I16)) ((t_I16)) :=
   {
     Mul_f_Output := t_I16;
     Mul_f_mul := fun  (self : t_I16) (rhs : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (z_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Mul_1057691929 : t_Mul ((t_I8)) ((t_I8)) :=
+#[global] Instance t_Mul_1057691929 : t_Mul ((t_I8)) ((t_I8)) :=
   {
     Mul_f_Output := t_I8;
     Mul_f_mul := fun  (self : t_I8) (rhs : t_I8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I8) (z_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_200638412 : t_Neg ((t_U128)) :=
+#[global] Instance t_Neg_200638412 : t_Neg ((t_U128)) :=
   {
     Neg_f_Output := t_U128;
     Neg_f_neg := fun  (self : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_sub (v_WORDSIZE_128_) (haxint_rem (Abstraction_f_lift (self)) (v_WORDSIZE_128_)));
   }.
 
-#[globa] Instance t_Mul_508073751 : t_Mul ((t_U128)) ((t_U128)) :=
+#[global] Instance t_Mul_508073751 : t_Mul ((t_U128)) ((t_U128)) :=
   {
     Mul_f_Output := t_U128;
     Mul_f_mul := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_184769952 : t_Rem ((t_U128)) ((t_U128)) :=
+#[global] Instance t_Rem_184769952 : t_Rem ((t_U128)) ((t_U128)) :=
   {
     Rem_f_Output := t_U128;
     Rem_f_rem := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_74062568 : t_Add ((t_U128)) ((t_U128)) :=
+#[global] Instance t_Add_74062568 : t_Add ((t_U128)) ((t_U128)) :=
   {
     Add_f_Output := t_U128;
     Add_f_add := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_697142148 : t_Div ((t_U128)) ((t_U128)) :=
+#[global] Instance t_Div_697142148 : t_Div ((t_U128)) ((t_U128)) :=
   {
     Div_f_Output := t_U128;
     Div_f_div := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_912131656 : t_Shl ((t_U128)) ((t_U8)) :=
+#[global] Instance t_Shl_912131656 : t_Shl ((t_U128)) ((t_U8)) :=
   {
     Shl_f_Output := t_U128;
     Shl_f_shl := fun  (self : t_U128) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_188720840 : t_Shl ((t_U128)) ((t_U16)) :=
+#[global] Instance t_Shl_188720840 : t_Shl ((t_U128)) ((t_U16)) :=
   {
     Shl_f_Output := t_U128;
     Shl_f_shl := fun  (self : t_U128) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_674581806 : t_Shl ((t_U128)) ((t_U32)) :=
+#[global] Instance t_Shl_674581806 : t_Shl ((t_U128)) ((t_U32)) :=
   {
     Shl_f_Output := t_U128;
     Shl_f_shl := fun  (self : t_U128) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_230523808 : t_Shl ((t_U128)) ((t_U64)) :=
+#[global] Instance t_Shl_230523808 : t_Shl ((t_U128)) ((t_U64)) :=
   {
     Shl_f_Output := t_U128;
     Shl_f_shl := fun  (self : t_U128) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_304350501 : t_Shl ((t_U128)) ((t_U128)) :=
+#[global] Instance t_Shl_304350501 : t_Shl ((t_U128)) ((t_U128)) :=
   {
     Shl_f_Output := t_U128;
     Shl_f_shl := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_584068908 : t_Shr ((t_U128)) ((t_U8)) :=
+#[global] Instance t_Shr_584068908 : t_Shr ((t_U128)) ((t_U8)) :=
   {
     Shr_f_Output := t_U128;
     Shr_f_shr := fun  (self : t_U128) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_73833277 : t_Shr ((t_U128)) ((t_U16)) :=
+#[global] Instance t_Shr_73833277 : t_Shr ((t_U128)) ((t_U16)) :=
   {
     Shr_f_Output := t_U128;
     Shr_f_shr := fun  (self : t_U128) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_50912121 : t_Shr ((t_U128)) ((t_U32)) :=
+#[global] Instance t_Shr_50912121 : t_Shr ((t_U128)) ((t_U32)) :=
   {
     Shr_f_Output := t_U128;
     Shr_f_shr := fun  (self : t_U128) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_282345299 : t_Shr ((t_U128)) ((t_U64)) :=
+#[global] Instance t_Shr_282345299 : t_Shr ((t_U128)) ((t_U64)) :=
   {
     Shr_f_Output := t_U128;
     Shr_f_shr := fun  (self : t_U128) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_354892033 : t_Shr ((t_U128)) ((t_U128)) :=
+#[global] Instance t_Shr_354892033 : t_Shr ((t_U128)) ((t_U128)) :=
   {
     Shr_f_Output := t_U128;
     Shr_f_shr := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitXor_457452962 : t_BitXor ((t_U128)) ((t_U128)) :=
+#[global] Instance t_BitXor_457452962 : t_BitXor ((t_U128)) ((t_U128)) :=
   {
     BitXor_f_Output := t_U128;
     BitXor_f_bitxor := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_bitxor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitAnd_499214249 : t_BitAnd ((t_U128)) ((t_U128)) :=
+#[global] Instance t_BitAnd_499214249 : t_BitAnd ((t_U128)) ((t_U128)) :=
   {
     BitAnd_f_Output := t_U128;
     BitAnd_f_bitand := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_bitand (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitOr_579754702 : t_BitOr ((t_U128)) ((t_U128)) :=
+#[global] Instance t_BitOr_579754702 : t_BitOr ((t_U128)) ((t_U128)) :=
   {
     BitOr_f_Output := t_U128;
     BitOr_f_bitor := fun  (self : t_U128) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U128) (haxint_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_338880159 : t_Neg ((t_U64)) :=
+#[global] Instance t_Neg_338880159 : t_Neg ((t_U64)) :=
   {
     Neg_f_Output := t_U64;
     Neg_f_neg := fun  (self : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_sub (v_WORDSIZE_64_) (haxint_rem (Abstraction_f_lift (self)) (v_WORDSIZE_64_)));
   }.
 
-#[globa] Instance t_Mul_785129859 : t_Mul ((t_U64)) ((t_U64)) :=
+#[global] Instance t_Mul_785129859 : t_Mul ((t_U64)) ((t_U64)) :=
   {
     Mul_f_Output := t_U64;
     Mul_f_mul := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_450198244 : t_Rem ((t_U64)) ((t_U64)) :=
+#[global] Instance t_Rem_450198244 : t_Rem ((t_U64)) ((t_U64)) :=
   {
     Rem_f_Output := t_U64;
     Rem_f_rem := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_880469818 : t_Add ((t_U64)) ((t_U64)) :=
+#[global] Instance t_Add_880469818 : t_Add ((t_U64)) ((t_U64)) :=
   {
     Add_f_Output := t_U64;
     Add_f_add := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_1065913959 : t_Div ((t_U64)) ((t_U64)) :=
+#[global] Instance t_Div_1065913959 : t_Div ((t_U64)) ((t_U64)) :=
   {
     Div_f_Output := t_U64;
     Div_f_div := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_307107617 : t_Shl ((t_U64)) ((t_U8)) :=
+#[global] Instance t_Shl_307107617 : t_Shl ((t_U64)) ((t_U8)) :=
   {
     Shl_f_Output := t_U64;
     Shl_f_shl := fun  (self : t_U64) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64 )(haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_521831749 : t_Shl ((t_U64)) ((t_U16)) :=
+#[global] Instance t_Shl_521831749 : t_Shl ((t_U64)) ((t_U16)) :=
   {
     Shl_f_Output := t_U64;
     Shl_f_shl := fun  (self : t_U64) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_243646433 : t_Shl ((t_U64)) ((t_U32)) :=
+#[global] Instance t_Shl_243646433 : t_Shl ((t_U64)) ((t_U32)) :=
   {
     Shl_f_Output := t_U64;
     Shl_f_shl := fun  (self : t_U64) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_732371970 : t_Shl ((t_U64)) ((t_U64)) :=
+#[global] Instance t_Shl_732371970 : t_Shl ((t_U64)) ((t_U64)) :=
   {
     Shl_f_Output := t_U64;
     Shl_f_shl := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_362455113 : t_Shl ((t_U64)) ((t_U128)) :=
+#[global] Instance t_Shl_362455113 : t_Shl ((t_U64)) ((t_U128)) :=
   {
     Shl_f_Output := t_U64;
     Shl_f_shl := fun  (self : t_U64) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_675607391 : t_Shr ((t_U64)) ((t_U8)) :=
+#[global] Instance t_Shr_675607391 : t_Shr ((t_U64)) ((t_U8)) :=
   {
     Shr_f_Output := t_U64;
     Shr_f_shr := fun  (self : t_U64) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_163042579 : t_Shr ((t_U64)) ((t_U16)) :=
+#[global] Instance t_Shr_163042579 : t_Shr ((t_U64)) ((t_U16)) :=
   {
     Shr_f_Output := t_U64;
     Shr_f_shr := fun  (self : t_U64) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_329072619 : t_Shr ((t_U64)) ((t_U32)) :=
+#[global] Instance t_Shr_329072619 : t_Shr ((t_U64)) ((t_U32)) :=
   {
     Shr_f_Output := t_U64;
     Shr_f_shr := fun  (self : t_U64) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_1046321056 : t_Shr ((t_U64)) ((t_U64)) :=
+#[global] Instance t_Shr_1046321056 : t_Shr ((t_U64)) ((t_U64)) :=
   {
     Shr_f_Output := t_U64;
     Shr_f_shr := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_1027159812 : t_Shr ((t_U64)) ((t_U128)) :=
+#[global] Instance t_Shr_1027159812 : t_Shr ((t_U64)) ((t_U128)) :=
   {
     Shr_f_Output := t_U64;
     Shr_f_shr := fun  (self : t_U64) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitXor_771705591 : t_BitXor ((t_U64)) ((t_U64)) :=
+#[global] Instance t_BitXor_771705591 : t_BitXor ((t_U64)) ((t_U64)) :=
   {
     BitXor_f_Output := t_U64;
     BitXor_f_bitxor := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_bitxor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitAnd_61309855 : t_BitAnd ((t_U64)) ((t_U64)) :=
+#[global] Instance t_BitAnd_61309855 : t_BitAnd ((t_U64)) ((t_U64)) :=
   {
     BitAnd_f_Output := t_U64;
     BitAnd_f_bitand := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_bitand (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitOr_584478327 : t_BitOr ((t_U64)) ((t_U64)) :=
+#[global] Instance t_BitOr_584478327 : t_BitOr ((t_U64)) ((t_U64)) :=
   {
     BitOr_f_Output := t_U64;
     BitOr_f_bitor := fun  (self : t_U64) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U64) (haxint_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_660092460 : t_Neg ((t_U32)) :=
+#[global] Instance t_Neg_660092460 : t_Neg ((t_U32)) :=
   {
     Neg_f_Output := t_U32;
     Neg_f_neg := fun  (self : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_sub (v_WORDSIZE_32_) (haxint_rem (Abstraction_f_lift (self)) (v_WORDSIZE_32_)));
   }.
 
-#[globa] Instance t_Mul_907086750 : t_Mul ((t_U32)) ((t_U32)) :=
+#[global] Instance t_Mul_907086750 : t_Mul ((t_U32)) ((t_U32)) :=
   {
     Mul_f_Output := t_U32;
     Mul_f_mul := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_754047547 : t_Rem ((t_U32)) ((t_U32)) :=
+#[global] Instance t_Rem_754047547 : t_Rem ((t_U32)) ((t_U32)) :=
   {
     Rem_f_Output := t_U32;
     Rem_f_rem := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_62760194 : t_Add ((t_U32)) ((t_U32)) :=
+#[global] Instance t_Add_62760194 : t_Add ((t_U32)) ((t_U32)) :=
   {
     Add_f_Output := t_U32;
     Add_f_add := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_1036065219 : t_Div ((t_U32)) ((t_U32)) :=
+#[global] Instance t_Div_1036065219 : t_Div ((t_U32)) ((t_U32)) :=
   {
     Div_f_Output := t_U32;
     Div_f_div := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_940272829 : t_Shl ((t_U32)) ((t_U8)) :=
+#[global] Instance t_Shl_940272829 : t_Shl ((t_U32)) ((t_U8)) :=
   {
     Shl_f_Output := t_U32;
     Shl_f_shl := fun  (self : t_U32) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_184065944 : t_Shl ((t_U32)) ((t_U16)) :=
+#[global] Instance t_Shl_184065944 : t_Shl ((t_U32)) ((t_U16)) :=
   {
     Shl_f_Output := t_U32;
     Shl_f_shl := fun  (self : t_U32) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_512141775 : t_Shl ((t_U32)) ((t_U32)) :=
+#[global] Instance t_Shl_512141775 : t_Shl ((t_U32)) ((t_U32)) :=
   {
     Shl_f_Output := t_U32;
     Shl_f_shl := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_760382167 : t_Shl ((t_U32)) ((t_U64)) :=
+#[global] Instance t_Shl_760382167 : t_Shl ((t_U32)) ((t_U64)) :=
   {
     Shl_f_Output := t_U32;
     Shl_f_shl := fun  (self : t_U32) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_938844716 : t_Shl ((t_U32)) ((t_U128)) :=
+#[global] Instance t_Shl_938844716 : t_Shl ((t_U32)) ((t_U128)) :=
   {
     Shl_f_Output := t_U32;
     Shl_f_shl := fun  (self : t_U32) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_376401556 : t_Shr ((t_U32)) ((t_U8)) :=
+#[global] Instance t_Shr_376401556 : t_Shr ((t_U32)) ((t_U8)) :=
   {
     Shr_f_Output := t_U32;
     Shr_f_shr := fun  (self : t_U32) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_816225657 : t_Shr ((t_U32)) ((t_U16)) :=
+#[global] Instance t_Shr_816225657 : t_Shr ((t_U32)) ((t_U16)) :=
   {
     Shr_f_Output := t_U32;
     Shr_f_shr := fun  (self : t_U32) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_131570199 : t_Shr ((t_U32)) ((t_U32)) :=
+#[global] Instance t_Shr_131570199 : t_Shr ((t_U32)) ((t_U32)) :=
   {
     Shr_f_Output := t_U32;
     Shr_f_shr := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_643141508 : t_Shr ((t_U32)) ((t_U64)) :=
+#[global] Instance t_Shr_643141508 : t_Shr ((t_U32)) ((t_U64)) :=
   {
     Shr_f_Output := t_U32;
     Shr_f_shr := fun  (self : t_U32) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_472576920 : t_Shr ((t_U32)) ((t_U128)) :=
+#[global] Instance t_Shr_472576920 : t_Shr ((t_U32)) ((t_U128)) :=
   {
     Shr_f_Output := t_U32;
     Shr_f_shr := fun  (self : t_U32) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitXor_568575701 : t_BitXor ((t_U32)) ((t_U32)) :=
+#[global] Instance t_BitXor_568575701 : t_BitXor ((t_U32)) ((t_U32)) :=
   {
     BitXor_f_Output := t_U32;
     BitXor_f_bitxor := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_bitxor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitAnd_188629984 : t_BitAnd ((t_U32)) ((t_U32)) :=
+#[global] Instance t_BitAnd_188629984 : t_BitAnd ((t_U32)) ((t_U32)) :=
   {
     BitAnd_f_Output := t_U32;
     BitAnd_f_bitand := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_bitand (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitOr_727300711 : t_BitOr ((t_U32)) ((t_U32)) :=
+#[global] Instance t_BitOr_727300711 : t_BitOr ((t_U32)) ((t_U32)) :=
   {
     BitOr_f_Output := t_U32;
     BitOr_f_bitor := fun  (self : t_U32) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U32) (haxint_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_524209972 : t_Neg ((t_U16)) :=
+#[global] Instance t_Neg_524209972 : t_Neg ((t_U16)) :=
   {
     Neg_f_Output := t_U16;
     Neg_f_neg := fun  (self : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_sub (v_WORDSIZE_16_) (haxint_rem (Abstraction_f_lift (self)) (v_WORDSIZE_16_)));
   }.
 
-#[globa] Instance t_Mul_813798593 : t_Mul ((t_U16)) ((t_U16)) :=
+#[global] Instance t_Mul_813798593 : t_Mul ((t_U16)) ((t_U16)) :=
   {
     Mul_f_Output := t_U16;
     Mul_f_mul := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_1023129312 : t_Rem ((t_U16)) ((t_U16)) :=
+#[global] Instance t_Rem_1023129312 : t_Rem ((t_U16)) ((t_U16)) :=
   {
     Rem_f_Output := t_U16;
     Rem_f_rem := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_669194837 : t_Add ((t_U16)) ((t_U16)) :=
+#[global] Instance t_Add_669194837 : t_Add ((t_U16)) ((t_U16)) :=
   {
     Add_f_Output := t_U16;
     Add_f_add := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_599727096 : t_Div ((t_U16)) ((t_U16)) :=
+#[global] Instance t_Div_599727096 : t_Div ((t_U16)) ((t_U16)) :=
   {
     Div_f_Output := t_U16;
     Div_f_div := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_254354835 : t_Shl ((t_U16)) ((t_U8)) :=
+#[global] Instance t_Shl_254354835 : t_Shl ((t_U16)) ((t_U8)) :=
   {
     Shl_f_Output := t_U16;
     Shl_f_shl := fun  (self : t_U16) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_786190756 : t_Shl ((t_U16)) ((t_U16)) :=
+#[global] Instance t_Shl_786190756 : t_Shl ((t_U16)) ((t_U16)) :=
   {
     Shl_f_Output := t_U16;
     Shl_f_shl := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_961613024 : t_Shl ((t_U16)) ((t_U32)) :=
+#[global] Instance t_Shl_961613024 : t_Shl ((t_U16)) ((t_U32)) :=
   {
     Shl_f_Output := t_U16;
     Shl_f_shl := fun  (self : t_U16) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_699049796 : t_Shl ((t_U16)) ((t_U64)) :=
+#[global] Instance t_Shl_699049796 : t_Shl ((t_U16)) ((t_U64)) :=
   {
     Shl_f_Output := t_U16;
     Shl_f_shl := fun  (self : t_U16) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_98667823 : t_Shl ((t_U16)) ((t_U128)) :=
+#[global] Instance t_Shl_98667823 : t_Shl ((t_U16)) ((t_U128)) :=
   {
     Shl_f_Output := t_U16;
     Shl_f_shl := fun  (self : t_U16) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_116990915 : t_Shr ((t_U16)) ((t_U8)) :=
+#[global] Instance t_Shr_116990915 : t_Shr ((t_U16)) ((t_U8)) :=
   {
     Shr_f_Output := t_U16;
     Shr_f_shr := fun  (self : t_U16) (rhs : t_U8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_53270962 : t_Shr ((t_U16)) ((t_U16)) :=
+#[global] Instance t_Shr_53270962 : t_Shr ((t_U16)) ((t_U16)) :=
   {
     Shr_f_Output := t_U16;
     Shr_f_shr := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_622272332 : t_Shr ((t_U16)) ((t_U32)) :=
+#[global] Instance t_Shr_622272332 : t_Shr ((t_U16)) ((t_U32)) :=
   {
     Shr_f_Output := t_U16;
     Shr_f_shr := fun  (self : t_U16) (rhs : t_U32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_1061476863 : t_Shr ((t_U16)) ((t_U64)) :=
+#[global] Instance t_Shr_1061476863 : t_Shr ((t_U16)) ((t_U64)) :=
   {
     Shr_f_Output := t_U16;
     Shr_f_shr := fun  (self : t_U16) (rhs : t_U64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_148349277 : t_Shr ((t_U16)) ((t_U128)) :=
+#[global] Instance t_Shr_148349277 : t_Shr ((t_U16)) ((t_U128)) :=
   {
     Shr_f_Output := t_U16;
     Shr_f_shr := fun  (self : t_U16) (rhs : t_U128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitXor_39308972 : t_BitXor ((t_U16)) ((t_U16)) :=
+#[global] Instance t_BitXor_39308972 : t_BitXor ((t_U16)) ((t_U16)) :=
   {
     BitXor_f_Output := t_U16;
     BitXor_f_bitxor := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_bitxor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitAnd_100986953 : t_BitAnd ((t_U16)) ((t_U16)) :=
+#[global] Instance t_BitAnd_100986953 : t_BitAnd ((t_U16)) ((t_U16)) :=
   {
     BitAnd_f_Output := t_U16;
     BitAnd_f_bitand := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_bitand (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitOr_321212552 : t_BitOr ((t_U16)) ((t_U16)) :=
+#[global] Instance t_BitOr_321212552 : t_BitOr ((t_U16)) ((t_U16)) :=
   {
     BitOr_f_Output := t_U16;
     BitOr_f_bitor := fun  (self : t_U16) (rhs : t_U16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_HaxInt t_U16) (haxint_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Neg_410091205 : t_Neg ((t_U8)) :=
+#[global] Instance t_Neg_410091205 : t_Neg ((t_U8)) :=
   {
     Neg_f_Output := t_U8;
     Neg_f_neg := fun  (self : t_U8)=>
       Concretization_f_concretize (haxint_sub (v_WORDSIZE_8_) (haxint_rem (Abstraction_f_lift (self)) (v_WORDSIZE_8_)));
   }.
 
-#[globa] Instance t_Mul_116494850 : t_Mul ((t_U8)) ((t_U8)) :=
+#[global] Instance t_Mul_116494850 : t_Mul ((t_U8)) ((t_U8)) :=
   {
     Mul_f_Output := t_U8;
     Mul_f_mul := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_mul (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_674469245 : t_Rem ((t_U8)) ((t_U8)) :=
+#[global] Instance t_Rem_674469245 : t_Rem ((t_U8)) ((t_U8)) :=
   {
     Rem_f_Output := t_U8;
     Rem_f_rem := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Add_886374338 : t_Add ((t_U8)) ((t_U8)) :=
+#[global] Instance t_Add_886374338 : t_Add ((t_U8)) ((t_U8)) :=
   {
     Add_f_Output := t_U8;
     Add_f_add := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_add (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_7559770 : t_Div ((t_U8)) ((t_U8)) :=
+#[global] Instance t_Div_7559770 : t_Div ((t_U8)) ((t_U8)) :=
   {
     Div_f_Output := t_U8;
     Div_f_div := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_889664521 : t_Shl ((t_U8)) ((t_U8)) :=
+#[global] Instance t_Shl_889664521 : t_Shl ((t_U8)) ((t_U8)) :=
   {
     Shl_f_Output := t_U8;
     Shl_f_shl := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_268581730 : t_Shl ((t_U8)) ((t_U16)) :=
+#[global] Instance t_Shl_268581730 : t_Shl ((t_U8)) ((t_U16)) :=
   {
     Shl_f_Output := t_U8;
     Shl_f_shl := fun  (self : t_U8) (rhs : t_U16)=>
       Concretization_f_concretize (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_833473770 : t_Shl ((t_U8)) ((t_U32)) :=
+#[global] Instance t_Shl_833473770 : t_Shl ((t_U8)) ((t_U32)) :=
   {
     Shl_f_Output := t_U8;
     Shl_f_shl := fun  (self : t_U8) (rhs : t_U32)=>
       Concretization_f_concretize (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_896563459 : t_Shl ((t_U8)) ((t_U64)) :=
+#[global] Instance t_Shl_896563459 : t_Shl ((t_U8)) ((t_U64)) :=
   {
     Shl_f_Output := t_U8;
     Shl_f_shl := fun  (self : t_U8) (rhs : t_U64)=>
       Concretization_f_concretize (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shl_595294021 : t_Shl ((t_U8)) ((t_U128)) :=
+#[global] Instance t_Shl_595294021 : t_Shl ((t_U8)) ((t_U128)) :=
   {
     Shl_f_Output := t_U8;
     Shl_f_shl := fun  (self : t_U8) (rhs : t_U128)=>
       Concretization_f_concretize (haxint_shl (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_467626732 : t_Shr ((t_U8)) ((t_U8)) :=
+#[global] Instance t_Shr_467626732 : t_Shr ((t_U8)) ((t_U8)) :=
   {
     Shr_f_Output := t_U8;
     Shr_f_shr := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_985367369 : t_Shr ((t_U8)) ((t_U16)) :=
+#[global] Instance t_Shr_985367369 : t_Shr ((t_U8)) ((t_U16)) :=
   {
     Shr_f_Output := t_U8;
     Shr_f_shr := fun  (self : t_U8) (rhs : t_U16)=>
       Concretization_f_concretize (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_868101800 : t_Shr ((t_U8)) ((t_U32)) :=
+#[global] Instance t_Shr_868101800 : t_Shr ((t_U8)) ((t_U32)) :=
   {
     Shr_f_Output := t_U8;
     Shr_f_shr := fun  (self : t_U8) (rhs : t_U32)=>
       Concretization_f_concretize (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_300023283 : t_Shr ((t_U8)) ((t_U64)) :=
+#[global] Instance t_Shr_300023283 : t_Shr ((t_U8)) ((t_U64)) :=
   {
     Shr_f_Output := t_U8;
     Shr_f_shr := fun  (self : t_U8) (rhs : t_U64)=>
       Concretization_f_concretize (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Shr_794091640 : t_Shr ((t_U8)) ((t_U128)) :=
+#[global] Instance t_Shr_794091640 : t_Shr ((t_U8)) ((t_U128)) :=
   {
     Shr_f_Output := t_U8;
     Shr_f_shr := fun  (self : t_U8) (rhs : t_U128)=>
       Concretization_f_concretize (haxint_shr (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitXor_24738444 : t_BitXor ((t_U8)) ((t_U8)) :=
+#[global] Instance t_BitXor_24738444 : t_BitXor ((t_U8)) ((t_U8)) :=
   {
     BitXor_f_Output := t_U8;
     BitXor_f_bitxor := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_bitxor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitAnd_358790390 : t_BitAnd ((t_U8)) ((t_U8)) :=
+#[global] Instance t_BitAnd_358790390 : t_BitAnd ((t_U8)) ((t_U8)) :=
   {
     BitAnd_f_Output := t_U8;
     BitAnd_f_bitand := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_bitand (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_BitOr_349401480 : t_BitOr ((t_U8)) ((t_U8)) :=
+#[global] Instance t_BitOr_349401480 : t_BitOr ((t_U8)) ((t_U8)) :=
   {
     BitOr_f_Output := t_U8;
     BitOr_f_bitor := fun  (self : t_U8) (rhs : t_U8)=>
       Concretization_f_concretize (haxint_bitor (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_998027599 : t_Rem ((t_I128)) ((t_I128)) :=
+#[global] Instance t_Rem_998027599 : t_Rem ((t_I128)) ((t_I128)) :=
   {
     Rem_f_Output := t_I128;
     Rem_f_rem := fun  (self : t_I128) (rhs : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (z_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_865866956 : t_Div ((t_I128)) ((t_I128)) :=
+#[global] Instance t_Div_865866956 : t_Div ((t_I128)) ((t_I128)) :=
   {
     Div_f_Output := t_I128;
     Div_f_div := fun  (self : t_I128) (rhs : t_I128)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I128) (z_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_957489424 : t_Rem ((t_I64)) ((t_I64)) :=
+#[global] Instance t_Rem_957489424 : t_Rem ((t_I64)) ((t_I64)) :=
   {
     Rem_f_Output := t_I64;
     Rem_f_rem := fun  (self : t_I64) (rhs : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (z_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_611785525 : t_Div ((t_I64)) ((t_I64)) :=
+#[global] Instance t_Div_611785525 : t_Div ((t_I64)) ((t_I64)) :=
   {
     Div_f_Output := t_I64;
     Div_f_div := fun  (self : t_I64) (rhs : t_I64)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I64) (z_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_219303214 : t_Rem ((t_I32)) ((t_I32)) :=
+#[global] Instance t_Rem_219303214 : t_Rem ((t_I32)) ((t_I32)) :=
   {
     Rem_f_Output := t_I32;
     Rem_f_rem := fun  (self : t_I32) (rhs : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (z_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_1002924104 : t_Div ((t_I32)) ((t_I32)) :=
+#[global] Instance t_Div_1002924104 : t_Div ((t_I32)) ((t_I32)) :=
   {
     Div_f_Output := t_I32;
     Div_f_div := fun  (self : t_I32) (rhs : t_I32)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I32) (z_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_948867246 : t_Rem ((t_I16)) ((t_I16)) :=
+#[global] Instance t_Rem_948867246 : t_Rem ((t_I16)) ((t_I16)) :=
   {
     Rem_f_Output := t_I16;
     Rem_f_rem := fun  (self : t_I16) (rhs : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (z_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_357493436 : t_Div ((t_I16)) ((t_I16)) :=
+#[global] Instance t_Div_357493436 : t_Div ((t_I16)) ((t_I16)) :=
   {
     Div_f_Output := t_I16;
     Div_f_div := fun  (self : t_I16) (rhs : t_I16)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I16) (z_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Rem_228000167 : t_Rem ((t_I8)) ((t_I8)) :=
+#[global] Instance t_Rem_228000167 : t_Rem ((t_I8)) ((t_I8)) :=
   {
     Rem_f_Output := t_I8;
     Rem_f_rem := fun  (self : t_I8) (rhs : t_I8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I8) (z_rem (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Div_470010025 : t_Div ((t_I8)) ((t_I8)) :=
+#[global] Instance t_Div_470010025 : t_Div ((t_I8)) ((t_I8)) :=
   {
     Div_f_Output := t_I8;
     Div_f_div := fun  (self : t_I8) (rhs : t_I8)=>
       Concretization_f_concretize (t_Concretization := _ : t_Concretization t_Z t_I8) (z_div (Abstraction_f_lift (self)) (Abstraction_f_lift (rhs)));
   }.
 
-#[globa] Instance t_Sub_1018502693 : t_Sub ((t_U128)) ((t_U128)) :=
+#[global] Instance t_Sub_1018502693 : t_Sub ((t_U128)) ((t_U128)) :=
   {
     Sub_f_Output := t_U128;
     Sub_f_sub := fun  (self : t_U128) (rhs : t_U128)=>
       Add_f_add (t_Add := _ : t_Add t_U128 t_U128) (self) (Neg_f_neg (rhs));
   }.
 
-#[globa] Instance t_Not_758360759 : t_Not ((t_U128)) :=
+#[global] Instance t_Not_758360759 : t_Not ((t_U128)) :=
   {
     Not_f_Output := t_U128;
     Not_f_not := fun  (self : t_U128)=>
       BitXor_f_bitxor (self) (Constants_f_MAX);
   }.
 
-#[globa] Instance t_Sub_919216830 : t_Sub ((t_U64)) ((t_U64)) :=
+#[global] Instance t_Sub_919216830 : t_Sub ((t_U64)) ((t_U64)) :=
   {
     Sub_f_Output := t_U64;
     Sub_f_sub := fun  (self : t_U64) (rhs : t_U64)=>
       Add_f_add (t_Add := _ : t_Add _ t_U64) (self) (Neg_f_neg (rhs));
   }.
 
-#[globa] Instance t_Not_693249901 : t_Not ((t_U64)) :=
+#[global] Instance t_Not_693249901 : t_Not ((t_U64)) :=
   {
     Not_f_Output := t_U64;
     Not_f_not := fun  (self : t_U64)=>
       BitXor_f_bitxor (self) (Constants_f_MAX);
   }.
 
-#[globa] Instance t_Sub_22623594 : t_Sub ((t_U32)) ((t_U32)) :=
+#[global] Instance t_Sub_22623594 : t_Sub ((t_U32)) ((t_U32)) :=
   {
     Sub_f_Output := t_U32;
     Sub_f_sub := fun  (self : t_U32) (rhs : t_U32)=>
       Add_f_add (t_Add := _ : t_Add _ t_U32) (self) (Neg_f_neg (rhs));
   }.
 
-#[globa] Instance t_Not_183316157 : t_Not ((t_U32)) :=
+#[global] Instance t_Not_183316157 : t_Not ((t_U32)) :=
   {
     Not_f_Output := t_U32;
     Not_f_not := fun  (self : t_U32)=>
       BitXor_f_bitxor (self) (Constants_f_MAX);
   }.
 
-#[globa] Instance t_Sub_502320750 : t_Sub ((t_U16)) ((t_U16)) :=
+#[global] Instance t_Sub_502320750 : t_Sub ((t_U16)) ((t_U16)) :=
   {
     Sub_f_Output := t_U16;
     Sub_f_sub := fun  (self : t_U16) (rhs : t_U16)=>
       Add_f_add (t_Add := _ : t_Add _ t_U16) (self) (Neg_f_neg (rhs));
   }.
 
-#[globa] Instance t_Not_669226601 : t_Not ((t_U16)) :=
+#[global] Instance t_Not_669226601 : t_Not ((t_U16)) :=
   {
     Not_f_Output := t_U16;
     Not_f_not := fun  (self : t_U16)=>
       BitXor_f_bitxor (self) (Constants_f_MAX);
   }.
 
-#[globa] Instance t_Sub_299023787 : t_Sub ((t_U8)) ((t_U8)) :=
+#[global] Instance t_Sub_299023787 : t_Sub ((t_U8)) ((t_U8)) :=
   {
     Sub_f_Output := t_U8;
     Sub_f_sub := fun  (self : t_U8) (rhs : t_U8)=>
       Add_f_add (t_Add := _ : t_Add _ t_U8) (self) (Neg_f_neg (rhs));
   }.
 
-#[globa] Instance t_Not_761019181 : t_Not ((t_U8)) :=
+#[global] Instance t_Not_761019181 : t_Not ((t_U8)) :=
   {
     Not_f_Output := t_U8;
     Not_f_not := fun  (self : t_U8)=>
