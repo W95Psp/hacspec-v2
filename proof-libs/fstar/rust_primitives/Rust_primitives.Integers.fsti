@@ -41,7 +41,8 @@ let signed t = match t with
 
 type uinttype = t:inttype{unsigned t}
 
-val size_bits:n:nat{n == 32 \/ n == 64}
+// val size_bits:n:nat{n == 32 \/ n == 64}
+let size_bits: nat = 32
 
 let bits t = match t with
   | U8 | I8 -> 8 
