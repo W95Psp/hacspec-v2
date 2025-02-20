@@ -131,7 +131,7 @@ pub(super) fn item(
     payload: pm::TokenStream,
     item: pm::TokenStream,
 ) -> pm::TokenStream {
-    let expr = TokenStream::from(expression(true, payload));
+    let expr = TokenStream::from(expression(InlineExprType::Unit, payload));
     let item = TokenStream::from(item);
     let uid = ItemUid::fresh();
     let uid_attr = AttrPayload::Uid(uid.clone());
@@ -174,7 +174,13 @@ pub(super) fn detect_future_node_in_expression(e: &syn::Expr) -> bool {
     visitor.0
 }
 
-pub(super) fn expression(force_unit: bool, payload: pm::TokenStream) -> pm::TokenStream {
+pub(super) enum InlineExprType {
+    Unit,
+    Prop,
+    Anything,
+}
+
+pub(super) fn expression(typ: InlineExprType, payload: pm::TokenStream) -> pm::TokenStream {
     let (mut backend_code, antiquotes) = {
         let payload = parse_macro_input!(payload as LitStr).value();
         if payload.contains(SPLIT_MARK) {
@@ -191,7 +197,7 @@ pub(super) fn expression(force_unit: bool, payload: pm::TokenStream) -> pm::Toke
         (quote! {#string}, antiquotes)
     };
     for user in antiquotes.iter().rev() {
-        if !force_unit
+        if !matches!(typ, InlineExprType::Unit)
             && syn::parse(user.ts.clone())
                 .as_ref()
                 .map(detect_future_node_in_expression)
@@ -209,10 +215,10 @@ pub(super) fn expression(force_unit: bool, payload: pm::TokenStream) -> pm::Toke
         };
     }
 
-    let function = if force_unit {
-        quote! {inline}
-    } else {
-        quote! {inline_unsafe::<::hax_lib::Prop>}
+    let function = match typ {
+        InlineExprType::Unit => quote! {inline},
+        InlineExprType::Prop => quote! {inline_unsafe::<::hax_lib::Prop>},
+        InlineExprType::Anything => quote! {inline_unsafe},
     };
 
     quote! {

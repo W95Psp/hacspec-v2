@@ -180,6 +180,24 @@ fn some_function() -> String {
     String::from("hello from Rust")
 }
 
+mod replace_body {
+    #[hax_lib::fstar::replace_body("magic ${x}")]
+    fn f(x: u8, y: u8) -> u8 {
+        1 + 2
+    }
+    struct Foo;
+    impl Foo {
+        #[hax_lib::fstar::replace_body("(magic (${self} <: $:{Self})) ${x}")]
+        fn assoc_fn(&self, x: u8) {}
+    }
+    impl ToString for Foo {
+        #[hax_lib::fstar::replace_body(r#""The type was $:{Self}""#)]
+        fn to_string(&self) -> String {
+            "Hello".into()
+        }
+    }
+}
+
 mod pre_post_on_traits_and_impls {
     use hax_lib::*;
 

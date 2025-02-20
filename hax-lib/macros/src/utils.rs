@@ -6,9 +6,9 @@ pub struct HaxQuantifiers;
 impl ToTokens for HaxQuantifiers {
     fn to_tokens(&self, tokens: &mut proc_macro2::TokenStream) {
         quote! {
-            use ::hax_lib::fstar_unsafe_expr as fstar;
-            use ::hax_lib::coq_unsafe_expr as coq;
-            use ::hax_lib::proverif_unsafe_expr as proverif;
+            use ::hax_lib::fstar::prop as fstar;
+            use ::hax_lib::coq::prop as coq;
+            use ::hax_lib::proverif::prop as proverif;
         }
         .to_tokens(tokens)
     }

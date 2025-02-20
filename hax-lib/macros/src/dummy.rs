@@ -36,6 +36,9 @@ identity_proc_macro_attribute!(
     fstar_replace,
     coq_replace,
     proverif_replace,
+    fstar_replace_body,
+    coq_replace_body,
+    proverif_replace_body,
     fstar_before,
     coq_before,
     proverif_before,
@@ -80,6 +83,19 @@ pub fn coq_unsafe_expr(_payload: TokenStream) -> TokenStream {
 #[proc_macro]
 pub fn proverif_unsafe_expr(_payload: TokenStream) -> TokenStream {
     unsafe_expr()
+}
+
+#[proc_macro]
+pub fn fstar_prop_expr(_payload: TokenStream) -> TokenStream {
+    quote! {::hax_lib::Prop::from_bool(true)}.into()
+}
+#[proc_macro]
+pub fn coq_prop_expr(_payload: TokenStream) -> TokenStream {
+    quote! {::hax_lib::Prop::from_bool(true)}.into()
+}
+#[proc_macro]
+pub fn proverif_prop_expr(_payload: TokenStream) -> TokenStream {
+    quote! {::hax_lib::Prop::from_bool(true)}.into()
 }
 
 fn not_hax_attribute(attr: &syn::Attribute) -> bool {
