@@ -262,6 +262,8 @@ val logand_lemma: #t:inttype -> a:int_t t -> b:int_t t ->
          logand zero a == zero /\
          logand a ones == a /\
          logand ones a == a /\
+         (a == b ==> logand a b == a) /\
+         (b == lognot a ==> logand a b == zero) /\
          (v a >= 0 ==> (v (logand a b) >= 0) /\ (v (logand a b) <= v a)) /\
          (v b >= 0 ==> (v (logand a b) >= 0) /\ (v (logand a b) <= v b)))
 
