@@ -120,6 +120,32 @@
               | sed 's#.*"https://github.com/rust-lang/rust/commit/\([^"]*\)".*#\1#' \
               > $out
           '';
+          # `updated-dune-project` returns the `engine/dune-project`
+          # file with the versions locked by Nix
+          updated-dune-project = (packages.hax-engine.override {
+            hax-rust-frontend = pkgs.hello;
+            hax-engine-names-extract = pkgs.hello;
+          }).overrideAttrs (old: {
+            name = "dune-project";
+            outputs = [ "out" ];
+            buildPhase = ''
+              dune describe installed-libraries > /tmp/dune-installed-libraries
+
+              for package in $(grep -Po '^ {8}[(]\K\w+' dune-project); do
+                  version=$(cat /tmp/dune-installed-libraries | grep -Po "\b$package\b.*version: \Kv?[0-9.]+" | head -n1 || true)
+                  version=$(echo "$version" | grep -Po "^v?\d+([.]\d+)*" || true)
+                  if [ -z "${"$"}{version}" ]; then
+                      continue
+                  fi
+                  ${pkgs.sd}/bin/sd "(^ {8}[(]$package +)\([^)]+\)" '${
+                    "$"
+                  }{1}'"(= \"$version\")" dune-project
+                  echo "-> $package: $version"
+              done
+            '';
+            checkPhase = "true";
+            installPhase = "cat dune-project > $out";
+          });
         };
         checks = {
           toolchain = packages.hax.tests;
